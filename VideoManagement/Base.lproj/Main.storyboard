@@ -111,11 +111,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.26533069349999999" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhZ-RY-TXa">
+                                <rect key="frame" x="20" y="602" width="94" height="30"/>
+                                <state key="normal" title="Back to Menu">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionBack:" destination="yCq-nu-9RU" eventType="touchUpInside" id="lfE-ZZ-Dja"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="hhZ-RY-TXa" firstAttribute="leading" secondItem="B9l-b8-hrg" secondAttribute="leading" constant="20" id="CgC-4S-ixf"/>
                             <constraint firstItem="WjP-l2-Ram" firstAttribute="centerX" secondItem="nbm-XI-pdD" secondAttribute="centerX" id="yhz-kt-slx"/>
                             <constraint firstItem="B9l-b8-hrg" firstAttribute="bottom" secondItem="WjP-l2-Ram" secondAttribute="bottom" constant="20" id="zRr-WS-LAn"/>
+                            <constraint firstItem="hhZ-RY-TXa" firstAttribute="centerY" secondItem="WjP-l2-Ram" secondAttribute="centerY" id="zvl-zj-j1b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B9l-b8-hrg"/>
                     </view>

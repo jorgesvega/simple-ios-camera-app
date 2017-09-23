@@ -21,6 +21,10 @@ class CaptureVC: UIViewController {
         photoOutput?.capturePhoto(with: settings, delegate: self)
     }
     
+    @IBAction func actionBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Properties
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
