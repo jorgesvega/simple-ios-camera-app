@@ -24,20 +24,11 @@
                                     <segue destination="yCq-nu-9RU" kind="show" id="1b9-FF-Rko"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLQ-NT-jE7">
-                                <rect key="frame" x="141" y="145" width="92" height="30"/>
-                                <state key="normal" title="Record Video"/>
-                                <connections>
-                                    <segue destination="B2r-au-6mF" kind="show" id="P0e-gP-D8h"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5Ss-ju-6ci" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7pi-an-Q9d"/>
                             <constraint firstItem="5Ss-ju-6ci" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="8oo-QJ-NCN"/>
-                            <constraint firstItem="VLQ-NT-jE7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V2Q-PB-H4n"/>
-                            <constraint firstItem="VLQ-NT-jE7" firstAttribute="top" secondItem="5Ss-ju-6ci" secondAttribute="bottom" constant="35" id="eGj-8E-Arw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -58,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qco-Hu-DJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="541"/>
+            <point key="canvasLocation" x="1839" y="-176"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tmx-DF-9iq">
@@ -67,7 +58,26 @@
                     <view key="view" contentMode="scaleToFill" id="nbm-XI-pdD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjP-l2-Ram">
+                                <rect key="frame" x="157.5" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="bfM-qM-pfL"/>
+                                    <constraint firstAttribute="width" constant="60" id="vTZ-LV-EoA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WjP-l2-Ram" firstAttribute="centerX" secondItem="nbm-XI-pdD" secondAttribute="centerX" id="yhz-kt-slx"/>
+                            <constraint firstItem="B9l-b8-hrg" firstAttribute="bottom" secondItem="WjP-l2-Ram" secondAttribute="bottom" constant="20" id="zRr-WS-LAn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="B9l-b8-hrg"/>
                     </view>
                 </viewController>

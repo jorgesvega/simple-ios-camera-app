@@ -12,15 +12,24 @@ import AVFoundation
 class PlayVideoVC: UIViewController {
     
     // MARK: - Properties
-    let cameraSession = AVCaptureSession()
-    let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
+    var captureSession = AVCaptureSession()
+    var backCamera: AVCaptureDevice?
+    var frontCamera: AVCaptureDevice?
+    var currentCamera: AVCaptureDevice?
+    
+    var photoOutput: AVCapturePhotoOutput?
+    
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        cameraSessionConfiguration()
 
-        // Do any additional setup after loading the view.
+        setupCaptureSession()
+        setupDevice()
+        setupInputOutput()
+        setupPreviewLayer()
+        startRunningCaptureSession()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,8 +38,47 @@ class PlayVideoVC: UIViewController {
     }
     
     // MARK: - Private Methods
-    fileprivate func cameraSessionConfiguration() {
-        cameraSession.sessionPreset = AVCaptureSession.Preset.high
+    fileprivate func setupCaptureSession() {
+        captureSession.sessionPreset = AVCaptureSession.Preset.photo
+    }
+    
+    fileprivate func setupDevice() {
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
+        let devices = deviceDiscoverySession.devices
+        
+        for device in devices {
+            if device.position == AVCaptureDevice.Position.back {
+                backCamera = device
+            }
+            else if device.position == AVCaptureDevice.Position.front {
+                frontCamera = device
+            }
+        }
+        
+        currentCamera = backCamera // Default camera
+    }
+    
+    fileprivate func setupInputOutput() {
+        do {
+            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!) //TODO: Wild unwrapping
+            captureSession.addInput(captureDeviceInput)
+            photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
+        } catch {
+            print(error)
+        }
+        
+    }
+    
+    fileprivate func setupPreviewLayer() {
+        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+        cameraPreviewLayer?.frame = self.view.frame
+        self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0) //TODO: Wild unwrapping
+    }
+    
+    fileprivate func startRunningCaptureSession() {
+        captureSession.startRunning()
     }
     
     
