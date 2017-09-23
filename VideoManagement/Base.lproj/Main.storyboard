@@ -35,6 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="7" y="-176"/>
         </scene>
         <!--PreviewVC-->
         <scene sceneID="qSu-K5-wZG">
@@ -99,16 +100,16 @@
             </objects>
             <point key="canvasLocation" x="1837.5999999999999" y="-176.76161919040482"/>
         </scene>
-        <!--Play VideoVC-->
+        <!--CaptureVC-->
         <scene sceneID="tmx-DF-9iq">
             <objects>
-                <viewController id="yCq-nu-9RU" customClass="PlayVideoVC" customModule="VideoManagement" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yCq-nu-9RU" customClass="CaptureVC" customModule="VideoManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nbm-XI-pdD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjP-l2-Ram">
-                                <rect key="frame" x="157.5" y="587" width="60" height="60"/>
+                                <rect key="frame" x="158" y="587" width="60" height="60"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="bfM-qM-pfL"/>
@@ -123,21 +124,30 @@
                                     <action selector="actionCameraButton:" destination="yCq-nu-9RU" eventType="touchUpInside" id="HjL-am-5Mw"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzR-vT-ZBX">
+                                <rect key="frame" x="97" y="142" width="180" height="383"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.26533069349999999" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="GzR-vT-ZBX" firstAttribute="top" secondItem="B9l-b8-hrg" secondAttribute="top" constant="122" id="2Wc-Uy-CWi"/>
+                            <constraint firstItem="GzR-vT-ZBX" firstAttribute="centerX" secondItem="nbm-XI-pdD" secondAttribute="centerX" id="ESY-ps-cnL"/>
+                            <constraint firstItem="GzR-vT-ZBX" firstAttribute="leading" secondItem="B9l-b8-hrg" secondAttribute="leading" constant="97" id="Mu7-jk-b9a"/>
+                            <constraint firstItem="GzR-vT-ZBX" firstAttribute="centerY" secondItem="nbm-XI-pdD" secondAttribute="centerY" id="omL-lj-fns"/>
                             <constraint firstItem="WjP-l2-Ram" firstAttribute="centerX" secondItem="nbm-XI-pdD" secondAttribute="centerX" id="yhz-kt-slx"/>
                             <constraint firstItem="B9l-b8-hrg" firstAttribute="bottom" secondItem="WjP-l2-Ram" secondAttribute="bottom" constant="20" id="zRr-WS-LAn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B9l-b8-hrg"/>
                     </view>
                     <connections>
+                        <outlet property="outletPreviewFrame" destination="GzR-vT-ZBX" id="9U7-hN-1Le"/>
                         <segue destination="B2r-au-6mF" kind="presentation" identifier="showPhotoSegue" id="YT0-nT-ZjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mma-Ke-CVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="967" y="-175"/>
+            <point key="canvasLocation" x="965.60000000000002" y="-175.86206896551727"/>
         </scene>
     </scenes>
 </document>

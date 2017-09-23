@@ -12,7 +12,7 @@
 		CFF16DA01F75C07C00BD38F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF16D9E1F75C07C00BD38F5 /* Main.storyboard */; };
 		CFF16DA21F75C07C00BD38F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF16DA11F75C07C00BD38F5 /* Assets.xcassets */; };
 		CFF16DA51F75C07C00BD38F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF16DA31F75C07C00BD38F5 /* LaunchScreen.storyboard */; };
-		CFF16DAE1F75C20100BD38F5 /* PlayVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF16DAD1F75C20100BD38F5 /* PlayVideoVC.swift */; };
+		CFF16DAE1F75C20100BD38F5 /* CaptureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF16DAD1F75C20100BD38F5 /* CaptureVC.swift */; };
 		CFF6773B1F76B89500383F3C /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6773A1F76B89500383F3C /* PreviewVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 		CFF16DA11F75C07C00BD38F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFF16DA41F75C07C00BD38F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFF16DA61F75C07C00BD38F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFF16DAD1F75C20100BD38F5 /* PlayVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoVC.swift; sourceTree = "<group>"; };
+		CFF16DAD1F75C20100BD38F5 /* CaptureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureVC.swift; sourceTree = "<group>"; };
 		CFF6773A1F76B89500383F3C /* PreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +72,7 @@
 		CFF16DAC1F75C1ED00BD38F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CFF16DAD1F75C20100BD38F5 /* PlayVideoVC.swift */,
+				CFF16DAD1F75C20100BD38F5 /* CaptureVC.swift */,
 				CFF6773A1F76B89500383F3C /* PreviewVC.swift */,
 			);
 			path = Controller;
@@ -152,7 +152,7 @@
 			files = (
 				CFF16D9D1F75C07C00BD38F5 /* ViewController.swift in Sources */,
 				CFF6773B1F76B89500383F3C /* PreviewVC.swift in Sources */,
-				CFF16DAE1F75C20100BD38F5 /* PlayVideoVC.swift in Sources */,
+				CFF16DAE1F75C20100BD38F5 /* CaptureVC.swift in Sources */,
 				CFF16D9B1F75C07C00BD38F5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jorgesvega.VideoManagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jorgesvega.VideoManagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

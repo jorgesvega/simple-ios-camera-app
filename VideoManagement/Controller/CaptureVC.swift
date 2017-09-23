@@ -9,9 +9,10 @@
 import UIKit
 import AVFoundation
 
-class PlayVideoVC: UIViewController {
+class CaptureVC: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var outletPreviewFrame: UIView!
     
     // MARK: - IBActions
     @IBAction func actionCameraButton(_ sender: Any) {
@@ -21,6 +22,10 @@ class PlayVideoVC: UIViewController {
     }
     
     // MARK: - Properties
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     var captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice?
     var frontCamera: AVCaptureDevice?
@@ -35,7 +40,8 @@ class PlayVideoVC: UIViewController {
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configureViews()
         setupCaptureSession()
         setupDevice()
         setupInputOutput()
@@ -56,6 +62,10 @@ class PlayVideoVC: UIViewController {
     }
     
     // MARK: - Private Methods
+    fileprivate func configureViews() {
+        
+    }
+    
     fileprivate func setupCaptureSession() {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
     }
@@ -102,7 +112,7 @@ class PlayVideoVC: UIViewController {
     }
 }
 
-extension PlayVideoVC: AVCapturePhotoCaptureDelegate {
+extension CaptureVC: AVCapturePhotoCaptureDelegate {
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
