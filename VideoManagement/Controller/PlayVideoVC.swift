@@ -15,7 +15,9 @@ class PlayVideoVC: UIViewController {
     
     // MARK: - IBActions
     @IBAction func actionCameraButton(_ sender: Any) {
-        performSegue(withIdentifier: "showPhotoSegue", sender: nil)
+        //performSegue(withIdentifier: "showPhotoSegue", sender: nil)
+        let settings = AVCapturePhotoSettings()
+        photoOutput?.capturePhoto(with: settings, delegate: self)
     }
     
     // MARK: - Properties
@@ -27,6 +29,8 @@ class PlayVideoVC: UIViewController {
     var photoOutput: AVCapturePhotoOutput?
     
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    
+    var image: UIImage?
     
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
@@ -42,6 +46,13 @@ class PlayVideoVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhotoSegue" {
+            let previewVC = segue.destination as! PreviewVC
+            previewVC.image = self.image
+        }
     }
     
     // MARK: - Private Methods
@@ -69,7 +80,9 @@ class PlayVideoVC: UIViewController {
         do {
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!) //TODO: Wild unwrapping
             captureSession.addInput(captureDeviceInput)
+            photoOutput = AVCapturePhotoOutput()
             photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
+            captureSession.addOutput(photoOutput!)
         } catch {
             print(error)
         }
@@ -87,8 +100,15 @@ class PlayVideoVC: UIViewController {
     fileprivate func startRunningCaptureSession() {
         captureSession.startRunning()
     }
-    
-    
+}
 
-
+extension PlayVideoVC: AVCapturePhotoCaptureDelegate {
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let imageData = photo.fileDataRepresentation() {
+            print(imageData)
+            image = UIImage(data: imageData)
+            performSegue(withIdentifier: "showPhotoSegue", sender: nil)
+        }
+    }
 }

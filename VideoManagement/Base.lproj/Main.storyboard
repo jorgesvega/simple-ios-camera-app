@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-ju-6ci">
-                                <rect key="frame" x="151" y="80" width="72" height="30"/>
-                                <state key="normal" title="Play Video"/>
+                                <rect key="frame" x="141" y="80" width="93" height="30"/>
+                                <state key="normal" title="Take a Photo!"/>
                                 <connections>
                                     <segue destination="yCq-nu-9RU" kind="show" id="1b9-FF-Rko"/>
                                 </connections>
@@ -44,7 +44,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bsk-4Y-Zvr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bsk-4Y-Zvr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnp-Ar-ump">
@@ -91,6 +91,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="55U-sq-SDz"/>
                     </view>
+                    <connections>
+                        <outlet property="photo" destination="bsk-4Y-Zvr" id="0hG-Ht-8ht"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qco-Hu-DJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
