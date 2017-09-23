@@ -45,50 +45,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bsk-4Y-Zvr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsk-4Y-Zvr">
+                                <rect key="frame" x="0.0" y="28" width="375" height="551"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnp-Ar-ump">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vti-W7-bf0">
-                                        <rect key="frame" x="25" y="15" width="48" height="30"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="actionCancel:" destination="B2r-au-6mF" eventType="touchUpInside" id="c6q-HR-qMU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jit-TD-ewG">
-                                        <rect key="frame" x="316" y="15" width="34" height="30"/>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="actionSave:" destination="B2r-au-6mF" eventType="touchUpInside" id="a0s-v3-RXn"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="vti-W7-bf0" firstAttribute="leading" secondItem="Rnp-Ar-ump" secondAttribute="leading" constant="25" id="F53-WR-2dR"/>
-                                    <constraint firstItem="jit-TD-ewG" firstAttribute="centerY" secondItem="vti-W7-bf0" secondAttribute="centerY" id="GmD-A7-mjw"/>
-                                    <constraint firstAttribute="trailing" secondItem="jit-TD-ewG" secondAttribute="trailing" constant="25" id="RV8-L3-nD1"/>
-                                    <constraint firstItem="jit-TD-ewG" firstAttribute="top" secondItem="Rnp-Ar-ump" secondAttribute="top" constant="15" id="YJE-52-ENJ"/>
-                                    <constraint firstAttribute="height" constant="60" id="mat-rw-NWj"/>
-                                </constraints>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuY-x0-9Cj">
+                                <rect key="frame" x="50" y="617" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="actionCancel:" destination="B2r-au-6mF" eventType="touchUpInside" id="toI-jE-KEY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2X-xE-nAV">
+                                <rect key="frame" x="291" y="617" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="actionSave:" destination="B2r-au-6mF" eventType="touchUpInside" id="9Er-W8-dF2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bsk-4Y-Zvr" firstAttribute="trailing" secondItem="55U-sq-SDz" secondAttribute="trailing" id="30A-qW-lI9"/>
-                            <constraint firstItem="bsk-4Y-Zvr" firstAttribute="leading" secondItem="55U-sq-SDz" secondAttribute="leading" id="5BC-Gm-0W3"/>
-                            <constraint firstItem="bsk-4Y-Zvr" firstAttribute="bottom" secondItem="55U-sq-SDz" secondAttribute="bottom" id="Nsh-pC-Epl"/>
-                            <constraint firstItem="Rnp-Ar-ump" firstAttribute="top" secondItem="kQQ-Pe-Nlx" secondAttribute="top" id="PIu-bZ-es2"/>
-                            <constraint firstItem="Rnp-Ar-ump" firstAttribute="trailing" secondItem="55U-sq-SDz" secondAttribute="trailing" id="YS7-3B-jWE"/>
-                            <constraint firstItem="bsk-4Y-Zvr" firstAttribute="top" secondItem="kQQ-Pe-Nlx" secondAttribute="top" id="pSl-ck-gI5"/>
-                            <constraint firstItem="Rnp-Ar-ump" firstAttribute="leading" secondItem="55U-sq-SDz" secondAttribute="leading" id="qWG-cq-Giq"/>
+                            <constraint firstItem="CuY-x0-9Cj" firstAttribute="centerY" secondItem="F2X-xE-nAV" secondAttribute="centerY" id="380-wj-PTU"/>
+                            <constraint firstItem="55U-sq-SDz" firstAttribute="bottom" secondItem="F2X-xE-nAV" secondAttribute="bottom" constant="20" id="4RT-DV-eD0"/>
+                            <constraint firstItem="CuY-x0-9Cj" firstAttribute="leading" secondItem="55U-sq-SDz" secondAttribute="leading" constant="50" id="AjA-aR-emy"/>
+                            <constraint firstItem="55U-sq-SDz" firstAttribute="trailing" secondItem="F2X-xE-nAV" secondAttribute="trailing" constant="50" id="Yau-1d-yOP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="55U-sq-SDz"/>
                     </view>
@@ -124,17 +106,14 @@
                                     <action selector="actionCameraButton:" destination="yCq-nu-9RU" eventType="touchUpInside" id="HjL-am-5Mw"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzR-vT-ZBX">
-                                <rect key="frame" x="97" y="142" width="180" height="383"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GzR-vT-ZBX">
+                                <rect key="frame" x="0.0" y="28" width="375" height="551"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.26533069349999999" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="GzR-vT-ZBX" firstAttribute="top" secondItem="B9l-b8-hrg" secondAttribute="top" constant="122" id="2Wc-Uy-CWi"/>
-                            <constraint firstItem="GzR-vT-ZBX" firstAttribute="centerX" secondItem="nbm-XI-pdD" secondAttribute="centerX" id="ESY-ps-cnL"/>
-                            <constraint firstItem="GzR-vT-ZBX" firstAttribute="leading" secondItem="B9l-b8-hrg" secondAttribute="leading" constant="97" id="Mu7-jk-b9a"/>
-                            <constraint firstItem="GzR-vT-ZBX" firstAttribute="centerY" secondItem="nbm-XI-pdD" secondAttribute="centerY" id="omL-lj-fns"/>
                             <constraint firstItem="WjP-l2-Ram" firstAttribute="centerX" secondItem="nbm-XI-pdD" secondAttribute="centerX" id="yhz-kt-slx"/>
                             <constraint firstItem="B9l-b8-hrg" firstAttribute="bottom" secondItem="WjP-l2-Ram" secondAttribute="bottom" constant="20" id="zRr-WS-LAn"/>
                         </constraints>

@@ -11,6 +11,10 @@ import UIKit
 class PreviewVC: UIViewController {
     
     // MARK: - Properties
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     var image: UIImage?
     
     // MARK: - IBOutlets
