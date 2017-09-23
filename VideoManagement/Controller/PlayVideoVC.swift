@@ -11,6 +11,13 @@ import AVFoundation
 
 class PlayVideoVC: UIViewController {
     
+    // MARK: - IBOutlets
+    
+    // MARK: - IBActions
+    @IBAction func actionCameraButton(_ sender: Any) {
+        performSegue(withIdentifier: "showPhotoSegue", sender: nil)
+    }
+    
     // MARK: - Properties
     var captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice?

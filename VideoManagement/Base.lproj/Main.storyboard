@@ -36,25 +36,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--PreviewVC-->
         <scene sceneID="qSu-K5-wZG">
             <objects>
-                <viewController id="B2r-au-6mF" sceneMemberID="viewController">
+                <viewController id="B2r-au-6mF" customClass="PreviewVC" customModule="VideoManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kQQ-Pe-Nlx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bsk-4Y-Zvr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnp-Ar-ump">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vti-W7-bf0">
+                                        <rect key="frame" x="25" y="15" width="48" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionCancel:" destination="B2r-au-6mF" eventType="touchUpInside" id="c6q-HR-qMU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jit-TD-ewG">
+                                        <rect key="frame" x="316" y="15" width="34" height="30"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionSave:" destination="B2r-au-6mF" eventType="touchUpInside" id="a0s-v3-RXn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="vti-W7-bf0" firstAttribute="leading" secondItem="Rnp-Ar-ump" secondAttribute="leading" constant="25" id="F53-WR-2dR"/>
+                                    <constraint firstItem="jit-TD-ewG" firstAttribute="centerY" secondItem="vti-W7-bf0" secondAttribute="centerY" id="GmD-A7-mjw"/>
+                                    <constraint firstAttribute="trailing" secondItem="jit-TD-ewG" secondAttribute="trailing" constant="25" id="RV8-L3-nD1"/>
+                                    <constraint firstItem="jit-TD-ewG" firstAttribute="top" secondItem="Rnp-Ar-ump" secondAttribute="top" constant="15" id="YJE-52-ENJ"/>
+                                    <constraint firstAttribute="height" constant="60" id="mat-rw-NWj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bsk-4Y-Zvr" firstAttribute="trailing" secondItem="55U-sq-SDz" secondAttribute="trailing" id="30A-qW-lI9"/>
+                            <constraint firstItem="bsk-4Y-Zvr" firstAttribute="leading" secondItem="55U-sq-SDz" secondAttribute="leading" id="5BC-Gm-0W3"/>
+                            <constraint firstItem="bsk-4Y-Zvr" firstAttribute="bottom" secondItem="55U-sq-SDz" secondAttribute="bottom" id="Nsh-pC-Epl"/>
+                            <constraint firstItem="Rnp-Ar-ump" firstAttribute="top" secondItem="kQQ-Pe-Nlx" secondAttribute="top" id="PIu-bZ-es2"/>
+                            <constraint firstItem="Rnp-Ar-ump" firstAttribute="trailing" secondItem="55U-sq-SDz" secondAttribute="trailing" id="YS7-3B-jWE"/>
+                            <constraint firstItem="bsk-4Y-Zvr" firstAttribute="top" secondItem="kQQ-Pe-Nlx" secondAttribute="top" id="pSl-ck-gI5"/>
+                            <constraint firstItem="Rnp-Ar-ump" firstAttribute="leading" secondItem="55U-sq-SDz" secondAttribute="leading" id="qWG-cq-Giq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="55U-sq-SDz"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qco-Hu-DJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839" y="-176"/>
+            <point key="canvasLocation" x="1837.5999999999999" y="-176.76161919040482"/>
         </scene>
-        <!--View Controller-->
+        <!--Play VideoVC-->
         <scene sceneID="tmx-DF-9iq">
             <objects>
-                <viewController id="yCq-nu-9RU" sceneMemberID="viewController">
+                <viewController id="yCq-nu-9RU" customClass="PlayVideoVC" customModule="VideoManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nbm-XI-pdD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,6 +116,9 @@
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionCameraButton:" destination="yCq-nu-9RU" eventType="touchUpInside" id="HjL-am-5Mw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,6 +128,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B9l-b8-hrg"/>
                     </view>
+                    <connections>
+                        <segue destination="B2r-au-6mF" kind="presentation" identifier="showPhotoSegue" id="YT0-nT-ZjK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mma-Ke-CVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
